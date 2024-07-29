@@ -6,6 +6,15 @@ import (
 	"time"
 )
 
+//How it works:
+//Imagine a bucket with a small hole in the bottom.
+//
+//Requests enter the bucket from the top.
+//
+//The bucket processes ("leaks") requests at a constant rate through the hole.
+//
+//If the bucket is full, new requests are discarded.
+
 type LeakyBucket struct {
 	Capacity int
 	Queue    *list.List
